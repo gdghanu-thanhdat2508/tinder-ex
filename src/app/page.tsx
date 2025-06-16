@@ -1,8 +1,5 @@
 import BlurText from "@/components/BlurText";
-import CardSwap, { Card } from "@/components/CardSwap";
-import Stepper, { Step } from "@/components/stepper";
 import StepperHome from "@/components/StepperHome";
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export default function Home() {
