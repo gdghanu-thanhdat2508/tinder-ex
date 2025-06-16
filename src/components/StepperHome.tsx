@@ -67,6 +67,13 @@ export default function StepperHome() {
                     </div>
                 </div>
             </div>
+            <div>
+                <div className="flex items-center justify-center flex-col">
+                    <div className="text-center uppercase">
+                        OPEN AND ENTER YOUR INVITE KEY
+                    </div>
+                </div>
+            </div>
         </Stepper>
     )
 }
