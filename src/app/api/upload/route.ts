@@ -22,8 +22,18 @@ export async function POST(req: Request) {
 
         return NextResponse.json({ url: blob.url });
     } catch (err: any) {
-        console.error("Upload error:", err.message || err);
-        console.log('TOKEN:', process.env.BLOB_READ_WRITE_TOKEN);
-        return NextResponse.json({ error: process.env.BLOB_READ_WRITE_TOKEN }, { status: 500 });
-    }
+  console.error("Upload error full:", err); // log toàn bộ object
+  console.error("Upload error msg:", err.message); // nếu có .message
+  console.log("TOKEN:", process.env.BLOB_READ_WRITE_TOKEN);
+
+  return NextResponse.json(
+    {
+      error: "Upload failed",
+      message: err.message,
+      token: !!process.env.BLOB_READ_WRITE_TOKEN, // true/false
+    },
+    { status: 500 }
+  );
+}
+
 }
