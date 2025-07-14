@@ -23,6 +23,7 @@ export async function POST(req: Request) {
         return NextResponse.json({ url: blob.url });
     } catch (err: any) {
         console.error("Upload error:", err.message || err);
-        return NextResponse.json({ error: "Upload failed" }, { status: 500 });
+        console.log('TOKEN:', process.env.BLOB_READ_WRITE_TOKEN);
+        return NextResponse.json({ error: process.env.BLOB_READ_WRITE_TOKEN }, { status: 500 });
     }
 }
